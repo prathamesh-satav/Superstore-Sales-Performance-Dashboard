@@ -1,69 +1,56 @@
-# 📊 Superstore Sales Performance Dashboard | Power BI Project
+# Superstore Sales Performance Dashboard
 
-## 📌 Overview
+## Overview
 
-This Power BI dashboard analyzes retail sales data from the popular **Sample Superstore** dataset to extract meaningful business insights around sales, profit, product performance, customer segments, and regional trends. This beginner-friendly project is ideal for showcasing data visualization, dashboard design, and business intelligence skills as an aspiring data analyst.
+This repository contains a Power BI dashboard designed for comprehensive analysis of Superstore sales data. The project provides an interactive and dynamic way to visualize key performance indicators (KPIs) and supports data-informed decision-making across various customer segments, regions, and product categories.
 
----
+## Key Features and Metrics
 
-## 🎯 Project Goals
+The dashboard is built around a set of explicit measures and key dimensions, making it highly interactive and optimized for the Power BI Q&A feature.
 
-- Create a visually engaging and interactive executive dashboard
-- Summarize key performance indicators (KPIs) for quick insight
-- Identify high-performing product categories and customer segments
-- Track sales performance over time and across regions
-- Demonstrate core Power BI skills for a data analyst portfolio
+### Core Metrics (KPIs)
+| Metric | Calculation | Purpose |
+| :--- | :--- | :--- |
+| **Total Sales** | SUM of Sales | Core revenue metric. |
+| **Total Profit** | SUM of Profit | Core profitability metric. |
+| **Total Quantity** | SUM of Quantity | Measures total volume of items sold. |
+| **Profit Margin (%)** | Total Profit / Total Sales | Key efficiency ratio. |
 
----
+### Key Dimensions (Slicers)
+The dashboard allows slicing of data based on the following dimensions:
+* **Region:** Breakdown by geographical region (e.g., West, East).
+* **Segment:** Analysis by customer segment (Consumer, Corporate, Home Office).
+* **Sub-Category:** Performance analysis for specific product types.
+* **State:** Geographical distribution of sales and profit (Map Visual).
+* **Order Date:** Trend analysis over time (Line Chart).
 
-## 📊 Dashboard Features
+## Data Source
 
-| Feature | Description |
-|--------|-------------|
-| **KPI Cards** | Track Total Sales, Total Profit, Total Quantity, and Average Discount |
-| **Line Chart** | Visualize Sales trends by month over time |
-| **Bar Chart** | Compare Sales across Product Sub-Categories grouped by Category |
-| **Map** | Analyze Sales performance across U.S. States (or Bar chart as fallback) |
-| **Pie Chart** | Show Profit contribution by Customer Segment |
-| **Slicers** | Enable filtering by Region, Category, and Year (Order Date) |
+The project utilizes the `Superstore.csv` file, which is a standard transactional sales dataset. The file is located in the root of this repository.
 
----
+## Setup and Usage
 
-## 🛠 Tools & Technologies
+### Prerequisites
 
-- **Power BI Desktop**
-- **DAX (Data Analysis Expressions)** for KPI measures
-- **Power Query** (minimal – data already clean)
-- **Sample - Superstore.csv** as dataset
+* **Power BI Desktop:** Required to view and interact with the `.pbix` file.
+* **Git:** Required for cloning and updating the repository files.
 
----
+### Steps to Run the Dashboard
 
-## 📂 Dataset Information
+1.  **Clone the Repository:**
+    Navigate to the directory where you want to store the project and run:
+    ```bash
+    git clone [https://github.com/prathamesh-satav/Superstore-Sales-Performance-Dashboard.git](https://github.com/prathamesh-satav/Superstore-Sales-Performance-Dashboard.git)
+    cd Superstore-Sales-Performance-Dashboard
+    ```
+2.  **Open the Project:**
+    Locate the Power BI file (`.pbix`) within the cloned directory and open it with Power BI Desktop.
+3.  **Refresh Data:**
+    If the underlying `Superstore.csv` file is updated, open the Power BI file and click **Refresh** on the **Home** tab to load the latest data.
 
-- **Source**: [Kaggle – Superstore Dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
-- **Format**: CSV
-- **Size**: ~10,000 rows
-- **Fields Include**:
-  - `Order Date`, `Sales`, `Profit`, `Discount`, `Quantity`
-  - `Category`, `Sub-Category`, `Segment`, `Region`, `State`, `Ship Mode`
+## Power BI Q&A Optimization
 
----
+The model is optimized for natural language querying. You can generate quick visualizations using the format: **`[Dimension] [Metric] [Visual Type]`**.
 
-## 📈 Key Insights Uncovered
-
-- 📦 **Office Supplies and Technology** are the highest grossing categories
-- 💰 The **Corporate Segment** contributes the most to profit
-- 🌍 **California, New York, and Texas** drive the largest portion of sales
-- 📉 Certain sub-categories (e.g. Tables) show negative profit despite high sales
-- 🕒 Sales show consistent growth with seasonality during Q4
-
----
-
-## 🧮 DAX Measures Used
-
-```DAX
-Total Sales = SUM('Superstore'[Sales])
-Total Profit = SUM('Superstore'[Profit])
-Total Quantity = SUM('Superstore'[Quantity])
-Average Discount = AVERAGE('Superstore'[Discount])
-MonthYear = FORMAT('Superstore'[Order Date], "MMM YYYY")
+* **Example Query 1:** `Region Total Sales Donut`
+* **Example Query 2:** `Sub-Category Profit Margin Funnel Chart`
